@@ -8,5 +8,5 @@ module KingJump {
     opens sprites;
     exports KingJump.Scene;
     exports KingJump.Character;
-    exports KingJump.Buttons;
+    exports KingJump.Button;
 }

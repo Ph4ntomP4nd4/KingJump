@@ -1,4 +1,4 @@
-package KingJump.Buttons;
+package KingJump.Button;
 
 import KingJump.KingJump;
 import com.github.hanyaeger.api.AnchorPoint;

@@ -1,6 +1,6 @@
 package KingJump.Scene;
 
-import KingJump.Buttons.StartButton;
+import KingJump.Button.StartButton;
 import KingJump.KingJump;
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
