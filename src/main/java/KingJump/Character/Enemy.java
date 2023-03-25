@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial;
+package KingJump.Character;
 
 public class Enemy {
     private int health;

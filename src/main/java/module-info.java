@@ -1,9 +1,12 @@
-module waterworld {
+module KingJump {
     requires hanyaeger;
 
-    exports com.github.hanyaeger.tutorial;
+    exports KingJump;
 
-    opens audio;
+    //opens audio;
     opens backgrounds;
     opens sprites;
+    exports KingJump.Scene;
+    exports KingJump.Character;
+    exports KingJump.Buttons;
 }
