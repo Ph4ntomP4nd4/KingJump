@@ -9,4 +9,5 @@ module KingJump {
     exports KingJump.Scene;
     exports KingJump.Character;
     exports KingJump.Button;
+    exports KingJump.Character.Enemy;
 }
