@@ -1,5 +1,6 @@
 package KingJump.Scene;
 
+import KingJump.Camera.Camera;
 import KingJump.Character.Player;
 import KingJump.InteractiveObject.FinishDoor;
 import KingJump.InteractiveObject.Gem.BlueGem;
@@ -12,7 +13,7 @@ import KingJump.Platform.Platform;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 
-public class LevelScene extends DynamicScene {
+public class LevelScene extends DynamicScene implements Camera {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/levelbackground1.png");

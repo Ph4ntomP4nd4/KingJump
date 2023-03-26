@@ -12,6 +12,6 @@ public abstract class Platform extends DynamicSpriteEntity implements Collider {
     private int size;
 
     public Platform(String resource, Coordinate2D location) {
-        super("sprites/platformSprite.png", location, new Size(200, 80), 1, 1);
+        super(resource, location, new Size(200, 80), 1, 1);
     }
 }

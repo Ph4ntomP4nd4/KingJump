@@ -4,7 +4,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 
 public class MeleeEnemy extends Enemy {
     protected MeleeEnemy(String resource, Coordinate2D location) {
-        super("", location);
+        super("sprites/meleeEnemy.png", location);
     }
 
     public void hitPlayer() {

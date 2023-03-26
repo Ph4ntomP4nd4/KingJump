@@ -15,6 +15,7 @@ import javafx.scene.input.KeyCode;
 import java.util.Set;
 
 public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided {
+    private int health;
     public Player(Coordinate2D location) {
         super("sprites/playerAnimation.png", location, new Size(80, 100), 1, 5);
     }

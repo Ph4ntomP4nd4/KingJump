@@ -5,7 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 public class Lava extends Enemy {
 
     protected Lava(String resource, Coordinate2D location) {
-        super("", location);
+        super("sprites/lava.png", location);
     }
 
     public void raiseLava() {
