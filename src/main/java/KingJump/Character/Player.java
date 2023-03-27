@@ -1,6 +1,7 @@
 package KingJump.Character;
 
 import KingJump.Hitbox.Hitbox;
+import KingJump.Text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -16,21 +17,24 @@ import java.util.List;
 import java.util.Set;
 
 public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided {
-    private int health;
-    public Player(Coordinate2D location) {
+    private HealthText healthText;
+    private int health = 1;
+    public Player(Coordinate2D location, HealthText healthText) {
         super("sprites/playerSprites.png", location, new Size(80, 100), 1, 10);
+        this.healthText = healthText;
+        healthText.setHealthText(health);
     }
 
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if(pressedKeys.contains(KeyCode.A)){
             setMotion(1.5,270d);
-            setGravityConstant(0.03);
+            setGravityConstant(0.5);
             setCurrentFrameIndex(4);
             setCurrentFrameIndex(3);
         } else if(pressedKeys.contains(KeyCode.D)){
             setMotion(1.5,90d);
-            setGravityConstant(0.03);
+            setGravityConstant(0.5);
             setCurrentFrameIndex(5);
             setCurrentFrameIndex(6);
         } else if(pressedKeys.contains(KeyCode.W)){
@@ -38,10 +42,6 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
             setGravityConstant(0.03);
             setCurrentFrameIndex(7);
             setCurrentFrameIndex(8);
-        } else if(pressedKeys.contains(KeyCode.S)){
-            setMotion(3,360d);
-            setGravityConstant(0.03);
-            setCurrentFrameIndex(9);
         } else if(pressedKeys.isEmpty()){
             setGravityConstant(0.03);
         }
@@ -67,13 +67,9 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         }
     }
     @Override
-    public void setCurrentFrameIndex(int index) {
-        super.setCurrentFrameIndex(index);
-    }
-
-    @Override
     public void onCollision(List<Collider> colliders) {
         //TODO Hitbox hitbox = new Hitbox((getWidth() / 2)(getHeight() - 200), 200, 80);
         setMotion(0, 0d);
     }
 }
+
