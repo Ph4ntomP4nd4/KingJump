@@ -38,10 +38,6 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
             setGravityConstant(0.03);
             setCurrentFrameIndex(7);
             setCurrentFrameIndex(8);
-        } else if(pressedKeys.contains(KeyCode.S)){
-            setMotion(3,360d);
-            setGravityConstant(0.03);
-            setCurrentFrameIndex(9);
         } else if(pressedKeys.isEmpty()){
             setGravityConstant(0.03);
         }
