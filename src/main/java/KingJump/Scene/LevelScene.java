@@ -1,6 +1,8 @@
 package KingJump.Scene;
 
-import KingJump.Camera.Camera;
+import KingJump.Character.Enemy.Enemy;
+import KingJump.Character.Enemy.MeleeEnemy;
+import KingJump.Map.EnemyTileMap;
 import KingJump.Character.Player;
 import KingJump.InteractiveObject.FinishDoor;
 import KingJump.InteractiveObject.Gem.BlueGem;
@@ -8,12 +10,16 @@ import KingJump.InteractiveObject.Gem.Gem;
 import KingJump.InteractiveObject.Gem.GreenGem;
 import KingJump.InteractiveObject.Gem.RedGem;
 import KingJump.InteractiveObject.Star;
+import KingJump.Map.PlatformTileMap;
 import KingJump.Platform.NormalPlatform;
 import KingJump.Platform.Platform;
+import KingJump.Text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
+import com.github.hanyaeger.api.scenes.TileMap;
+import com.github.hanyaeger.api.scenes.TileMapContainer;
 
-public class LevelScene extends DynamicScene implements Camera {
+public class LevelScene extends DynamicScene {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/levelbackground1.png");
@@ -22,7 +28,7 @@ public class LevelScene extends DynamicScene implements Camera {
 
     @Override
     public void setupEntities() {
-        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2)));
         addEntity(player);
         Platform platform = new NormalPlatform(new Coordinate2D(getWidth() / 2, getHeight() - 200));
         addEntity(platform);
@@ -36,6 +42,16 @@ public class LevelScene extends DynamicScene implements Camera {
         addEntity(redGem);
         addEntity(blueGem);
         addEntity(greenGem);
+        Enemy meleeEnemy = new MeleeEnemy(new Coordinate2D(getWidth() / 3, getHeight() / 2));
+        addEntity(meleeEnemy);
     }
+
+//    @Override
+//    public void setupTileMaps() {
+//        PlatformTileMap platformTileMap = new PlatformTileMap();
+//        addTileMap(platformTileMap);
+////        EnemyTileMap enemyTilemap = new EnemyTileMap();
+////        addTileMap(enemyTilemap);
+//    }
 }
 

@@ -1,5 +1,6 @@
 package KingJump.Character;
 
+import KingJump.Character.Enemy.MeleeEnemy;
 import KingJump.Hitbox.Hitbox;
 import KingJump.Text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -18,7 +19,7 @@ import java.util.Set;
 
 public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided {
     private HealthText healthText;
-    private int health = 1;
+    private int health = 3;
     public Player(Coordinate2D location, HealthText healthText) {
         super("sprites/playerSprites.png", location, new Size(80, 100), 1, 10);
         this.healthText = healthText;
@@ -70,6 +71,10 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     public void onCollision(List<Collider> colliders) {
         //TODO Hitbox hitbox = new Hitbox((getWidth() / 2)(getHeight() - 200), 200, 80);
         setMotion(0, 0d);
+        if (colliders instanceof MeleeEnemy) {
+            health--;
+            System.out.println(health);
+        }
     }
 }
 

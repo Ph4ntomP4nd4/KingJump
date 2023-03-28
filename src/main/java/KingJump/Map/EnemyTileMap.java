@@ -1,8 +1,6 @@
-package KingJump.Character.Enemy.Map;
+package KingJump.Map;
 
 import KingJump.Character.Enemy.Enemy;
-import KingJump.Character.Enemy.PushingEnemy;
-import KingJump.Character.Enemy.ShootingEnemy;
 import com.github.hanyaeger.api.scenes.TileMap;
 
 public class EnemyTileMap extends TileMap {
@@ -29,7 +27,7 @@ public class EnemyTileMap extends TileMap {
                 {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1},
                 {0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
                 {1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0},
-                {1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1},
+                {1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1}
         };
     }
 }
