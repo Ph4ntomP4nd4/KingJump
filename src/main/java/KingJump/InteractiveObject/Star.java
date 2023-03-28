@@ -10,4 +10,7 @@ public class Star extends DynamicSpriteEntity implements Collider {
     public Star(Coordinate2D location) {
         super("sprites/star.png", location, new Size(50, 50), 1, 1);
     }
+
+    public void givePlayerStar () {
+    }
 }

@@ -9,4 +9,7 @@ public class FinishDoor extends DynamicSpriteEntity implements Collider {
     public FinishDoor(Coordinate2D location) {
         super("sprites/finishDoor.png", location, new Size(50, 100), 1, 1);
     }
+
+    public void progressToNextLevel () {
+    }
 }

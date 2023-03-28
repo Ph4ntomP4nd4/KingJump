@@ -30,9 +30,6 @@ public class TitleScene extends StaticScene {
         kingjumpText.setFill(Color.DARKRED);
         kingjumpText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
         addEntity(kingjumpText);
-
-//        var playButton = new Button(new Coordinate2D(getWidth() / 1.4,getHeight() / 2.5), "Play Game", AnchorPoint.BOTTOM_LEFT, Color.DARKRED, Font.font("Roboto", FontWeight.NORMAL, 40), kingJump);
-//        addEntity(playButton);
         var startButton = new StartButton(new Coordinate2D(getWidth() / 1.4, getHeight() / 2.5), kingJump);
         addEntity(startButton);
     }

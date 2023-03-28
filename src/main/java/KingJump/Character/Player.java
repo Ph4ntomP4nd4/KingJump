@@ -29,22 +29,22 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if(pressedKeys.contains(KeyCode.A)){
-            setMotion(1.5,270d);
+            setMotion(2,270d);
             setGravityConstant(0.5);
             setCurrentFrameIndex(4);
             setCurrentFrameIndex(3);
         } else if(pressedKeys.contains(KeyCode.D)){
-            setMotion(1.5,90d);
+            setMotion(2,90d);
             setGravityConstant(0.5);
             setCurrentFrameIndex(5);
             setCurrentFrameIndex(6);
         } else if(pressedKeys.contains(KeyCode.W)){
-            setMotion(4,180d);
-            setGravityConstant(0.03);
+            setMotion(6,180d);
+            setGravityConstant(0.05);
             setCurrentFrameIndex(7);
             setCurrentFrameIndex(8);
         } else if(pressedKeys.isEmpty()){
-            setGravityConstant(0.03);
+            setGravityConstant(0.05);
         }
     }
 
@@ -71,10 +71,9 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     public void onCollision(List<Collider> colliders) {
         //TODO Hitbox hitbox = new Hitbox((getWidth() / 2)(getHeight() - 200), 200, 80);
         setMotion(0, 0d);
-        if (colliders instanceof MeleeEnemy) {
-            health--;
-            System.out.println(health);
-        }
+//            health--;
+//            healthText.setHealthText(health);
+//            System.out.println(health);
     }
 }
 

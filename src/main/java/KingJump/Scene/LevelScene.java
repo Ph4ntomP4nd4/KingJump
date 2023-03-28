@@ -15,20 +15,23 @@ import KingJump.Platform.NormalPlatform;
 import KingJump.Platform.Platform;
 import KingJump.Text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.scenes.DynamicScene;
+import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.scenes.ScrollableDynamicScene;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 
-public class LevelScene extends DynamicScene {
+public class LevelScene extends ScrollableDynamicScene {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/levelbackground1.png");
         //TODO setBackgroundAudio("audio/waterworld.mp3"); (EEN LEUKE SOUNDTRACK)
+        setSize(new Size(1920, 1080));
+        setVerticalScrollPosition(1);
     }
 
     @Override
     public void setupEntities() {
-        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2)));
+        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), new HealthText(new Coordinate2D(50, 50)));
         addEntity(player);
         Platform platform = new NormalPlatform(new Coordinate2D(getWidth() / 2, getHeight() - 200));
         addEntity(platform);
@@ -44,6 +47,9 @@ public class LevelScene extends DynamicScene {
         addEntity(greenGem);
         Enemy meleeEnemy = new MeleeEnemy(new Coordinate2D(getWidth() / 3, getHeight() / 2));
         addEntity(meleeEnemy);
+
+//        HealthText healthText = new HealthText(new Coordinate2D(50, 50));
+//        addEntity(healthText);
     }
 
 //    @Override
