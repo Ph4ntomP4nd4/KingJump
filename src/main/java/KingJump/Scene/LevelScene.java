@@ -49,6 +49,7 @@ public class LevelScene extends DynamicScene implements TileMapContainer {
         FinishDoor finishDoor = new FinishDoor(new Coordinate2D(1150, 140), new Size(50,80));
         addEntity(finishDoor);
 
+
     }
 
     @Override
