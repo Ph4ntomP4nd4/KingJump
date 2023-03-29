@@ -8,7 +8,7 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 
 public abstract class Enemy extends DynamicSpriteEntity implements Collider {
     private int damage;
-    public Enemy(String resource, Coordinate2D location, double width, double height, int row, int column) {
-        super(resource, location, new Size(width, height), row, column);
+    public Enemy(String resource, Coordinate2D location, Size size, int row, int column) {
+        super(resource, location, size, row, column);
     }
 }

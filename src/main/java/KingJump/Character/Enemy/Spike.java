@@ -5,8 +5,8 @@ import com.github.hanyaeger.api.Size;
 
 public class Spike extends Enemy {
 
-    public Spike(String resource, Coordinate2D location) {
-        super("sprites/spike.png", location, 200,100, 1, 1);
+    public Spike(Coordinate2D location, Size size) {
+        super("sprites/spike.png", location, size,1, 1);
     }
 
     public void hitPLayer() {

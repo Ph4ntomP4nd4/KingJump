@@ -6,8 +6,8 @@ import com.github.hanyaeger.api.entities.Collider;
 
 public class ShootingEnemy extends Enemy implements Collider {
 
-    public ShootingEnemy(String resource, Coordinate2D location) {
-        super("sprites/shootingEnemy.png", location, 100,200, 1, 1);
+    public ShootingEnemy(Coordinate2D location, Size size) {
+        super("sprites/shootingEnemy.png", location, size, 1, 1);
     }
 
     public void shootPlayer() {

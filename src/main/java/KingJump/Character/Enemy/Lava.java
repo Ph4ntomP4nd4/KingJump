@@ -5,8 +5,8 @@ import com.github.hanyaeger.api.Size;
 
 public class Lava extends Enemy {
 
-    public Lava(String resource, Coordinate2D location) {
-        super("sprites/lava.png", location, 1920, 200, 1,1);
+    public Lava(Coordinate2D location, Size size) {
+        super("sprites/lava.png", location, size, 1, 1);
     }
 
     public void raiseLava() {
