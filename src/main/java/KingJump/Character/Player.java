@@ -1,7 +1,6 @@
 package KingJump.Character;
 
-import KingJump.Character.Enemy.MeleeEnemy;
-import KingJump.Hitbox.Hitbox;
+import KingJump.Character.Enemy.Enemy;
 import KingJump.Text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
@@ -17,8 +16,8 @@ import javafx.scene.input.KeyCode;
 import java.util.List;
 import java.util.Set;
 
-public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided {
-    private HealthText healthText;
+public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
+    private final HealthText healthText;
     private boolean canJump = true;
     private int health = 3;
 
@@ -78,9 +77,6 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         //TODO Hitbox hitbox = new Hitbox((getWidth() / 2)(getHeight() - 200), 200, 80);
         setMotion(0, 0d);
         canJump = true;
-//            health--;
-//            healthText.setHealthText(health);
-//            System.out.println(health);
     }
 }
 

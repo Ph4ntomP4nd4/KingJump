@@ -2,6 +2,9 @@ package KingJump.Character.Enemy;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.entities.Collider;
+
+import java.util.List;
 
 public class MeleeEnemy extends Enemy {
     public MeleeEnemy(Coordinate2D location, Size size) {
@@ -10,5 +13,8 @@ public class MeleeEnemy extends Enemy {
 
     public void hitPlayer() {
         //TODO hit player in melee range
+    }
+    @Override
+    public void onCollision(List<Collider> collidingObjects) {
     }
 }

@@ -4,6 +4,8 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collider;
 
+import java.util.List;
+
 public class ShootingEnemy extends Enemy implements Collider {
 
     public ShootingEnemy(Coordinate2D location, Size size) {
@@ -12,5 +14,9 @@ public class ShootingEnemy extends Enemy implements Collider {
 
     public void shootPlayer() {
         //TODO shoot player
+    }
+
+    @Override
+    public void onCollision(List<Collider> collidingObjects) {
     }
 }

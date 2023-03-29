@@ -12,4 +12,5 @@ module KingJump {
     exports KingJump.Character.Enemy;
     exports KingJump.Map;
     exports KingJump.Platform;
+    exports KingJump.Text;
 }

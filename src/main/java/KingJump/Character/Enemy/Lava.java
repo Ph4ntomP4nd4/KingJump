@@ -2,6 +2,9 @@ package KingJump.Character.Enemy;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.entities.Collider;
+
+import java.util.List;
 
 public class Lava extends Enemy {
 
@@ -15,5 +18,10 @@ public class Lava extends Enemy {
 
     public void killPlayer() {
         //TODO kill player als hij in lava valt
+    }
+
+    @Override
+    public void onCollision(List<Collider> collidingObjects) {
+
     }
 }
