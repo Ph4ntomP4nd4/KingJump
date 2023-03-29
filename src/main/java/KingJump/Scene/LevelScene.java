@@ -16,18 +16,17 @@ import KingJump.Platform.Platform;
 import KingJump.Text.HealthText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.ScrollableDynamicScene;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 
-public class LevelScene extends ScrollableDynamicScene implements TileMapContainer {
+public class LevelScene extends DynamicScene implements TileMapContainer {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/levelbackground1.png");
         //TODO setBackgroundAudio("audio/waterworld.mp3"); (EEN LEUKE SOUNDTRACK)
-        setSize(new Size(1920, 1080));
 //        for (double i = 1; i <=1; i -= 0.01) {
-        setVerticalScrollPosition(1);
 //        }
     }
 
