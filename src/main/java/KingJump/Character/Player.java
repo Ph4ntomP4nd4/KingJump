@@ -77,6 +77,11 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
         //TODO Hitbox hitbox = new Hitbox((getWidth() / 2)(getHeight() - 200), 200, 80);
         setMotion(0, 0d);
         canJump = true;
+        if (colliders instanceof Enemy) {
+            setAnchorLocation(new Coordinate2D(getWidth() / 2, getHeight() / 2 ));
+            health--;
+            healthText.setHealthText(health);
+        }
     }
 }
 
