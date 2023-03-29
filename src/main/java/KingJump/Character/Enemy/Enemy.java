@@ -14,12 +14,4 @@ public abstract class Enemy extends DynamicSpriteEntity implements Collider, Col
     public Enemy(String resource, Coordinate2D location, Size size, int row, int column) {
         super(resource, location, size, row, column);
     }
-
-    @Override
-    public void onCollision(List<Collider> colliders) {
-//            player.onCollision();
-//            health--;
-//            healthText.setHealthText(health);
-        }
-    }
-//}
+}

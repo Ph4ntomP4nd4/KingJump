@@ -12,9 +12,8 @@ public class Spike extends Enemy {
         super("sprites/spike.png", location, size,1, 1);
     }
 
-    public void hitPLayer() {
-    }
     @Override
     public void onCollision(List<Collider> collidingObjects) {
+        //TODO hitplayer
     }
 }

@@ -10,7 +10,4 @@ public abstract class Gem extends DynamicSpriteEntity implements Collider, Colli
     public Gem(String resource, Coordinate2D initialLocation, Size size) {
         super(resource, initialLocation, size);
     }
-
-    public void givePowerUp () {
-    }
 }

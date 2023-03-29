@@ -16,12 +16,8 @@ public class Lava extends Enemy {
         setMotion(0.4, 180d);
     }
 
-    public void killPlayer() {
-        //TODO kill player als hij in lava valt
-    }
-
     @Override
     public void onCollision(List<Collider> collidingObjects) {
-
+        //TODO kill player als hij in lava valt
     }
 }
