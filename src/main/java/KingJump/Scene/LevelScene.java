@@ -1,5 +1,6 @@
 package KingJump.Scene;
 
+import KingJump.Character.Enemy.Lava;
 import KingJump.InteractiveObject.FinishDoor;
 import KingJump.InteractiveObject.Gem.BlueGem;
 import KingJump.InteractiveObject.Gem.Gem;
@@ -49,7 +50,9 @@ public class LevelScene extends DynamicScene implements TileMapContainer {
         FinishDoor finishDoor = new FinishDoor(new Coordinate2D(1150, 140), new Size(50,80));
         addEntity(finishDoor);
 
-
+        Lava lava = new Lava(new Coordinate2D(0, getHeight()), new Size(1920, 1080));
+        lava.raiseLava();
+        addEntity(lava);
     }
 
     @Override

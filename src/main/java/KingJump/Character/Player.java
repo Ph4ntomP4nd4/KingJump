@@ -1,6 +1,7 @@
 package KingJump.Character;
 
 import KingJump.Character.Enemy.Enemy;
+import KingJump.Platform.FallingPlatform;
 import KingJump.Text.HealthText;
 import KingJump.Text.StarText;
 import com.github.hanyaeger.api.Coordinate2D;

@@ -11,5 +11,6 @@ public class FallingPlatform extends Platform {
 
     public void letPlatformFall() {
         //TODO platform laten vallen
+        setMotion(0.5, 360d);
     }
 }
