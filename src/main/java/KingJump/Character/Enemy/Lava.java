@@ -13,7 +13,7 @@ public class Lava extends Enemy {
     }
 
     public void raiseLava() {
-        setMotion(0.4, 180d);
+        setMotion(0.3, 180d);
     }
 
     @Override
