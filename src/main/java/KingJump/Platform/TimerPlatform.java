@@ -6,7 +6,7 @@ public class TimerPlatform extends Platform {
     private int timer;
 
     public TimerPlatform(Coordinate2D location) {
-        super("sprites/platformSprite.png", location);
+        super(location, null);
     }
 
     public void turnOnAndOff() {

@@ -39,7 +39,7 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
             setCurrentFrameIndex(5);
             setCurrentFrameIndex(6);
         } else if(pressedKeys.contains(KeyCode.W)){
-            setMotion(6,180d);
+            setMotion(5,180d);
             setGravityConstant(0.05);
             setCurrentFrameIndex(7);
             setCurrentFrameIndex(8);

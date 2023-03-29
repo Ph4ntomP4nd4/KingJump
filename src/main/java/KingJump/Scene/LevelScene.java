@@ -20,21 +20,23 @@ import com.github.hanyaeger.api.scenes.ScrollableDynamicScene;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 
-public class LevelScene extends ScrollableDynamicScene {
+public class LevelScene extends ScrollableDynamicScene implements TileMapContainer {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/levelbackground1.png");
         //TODO setBackgroundAudio("audio/waterworld.mp3"); (EEN LEUKE SOUNDTRACK)
         setSize(new Size(1920, 1080));
+//        for (double i = 1; i <=1; i -= 0.01) {
         setVerticalScrollPosition(1);
+//        }
     }
 
     @Override
     public void setupEntities() {
         Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), new HealthText(new Coordinate2D(50, 50)));
         addEntity(player);
-        Platform platform = new NormalPlatform(new Coordinate2D(getWidth() / 2, getHeight() - 200));
-        addEntity(platform);
+//        Platform platform = new NormalPlatform(new Coordinate2D(getWidth() / 2, getHeight() - 200), new Size(200, 80));
+//        addEntity(platform);
         Star star = new Star(new Coordinate2D(getWidth() / 2, getHeight() - 250));
         addEntity(star);
         FinishDoor finishDoor = new FinishDoor(new Coordinate2D(getWidth() / 2 + 50, getHeight() - 275));
@@ -52,12 +54,12 @@ public class LevelScene extends ScrollableDynamicScene {
 //        addEntity(healthText);
     }
 
-//    @Override
-//    public void setupTileMaps() {
-//        PlatformTileMap platformTileMap = new PlatformTileMap();
-//        addTileMap(platformTileMap);
-////        EnemyTileMap enemyTilemap = new EnemyTileMap();
-////        addTileMap(enemyTilemap);
-//    }
+    @Override
+    public void setupTileMaps() {
+        PlatformTileMap platformTileMap = new PlatformTileMap();
+        addTileMap(platformTileMap);
+//        EnemyTileMap enemyTilemap = new EnemyTileMap();
+//        addTileMap(enemyTilemap);
+    }
 }
 

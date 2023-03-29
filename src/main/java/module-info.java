@@ -11,4 +11,5 @@ module KingJump {
     exports KingJump.Button;
     exports KingJump.Character.Enemy;
     exports KingJump.Map;
+    exports KingJump.Platform;
 }

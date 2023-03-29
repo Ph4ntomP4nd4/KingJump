@@ -5,7 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 public class MovingPlatform extends Platform {
 
     public MovingPlatform(Coordinate2D location) {
-        super("sprites/platformSprite.png", location);
+        super(location, null);
     }
 
     public void movePlatform() {

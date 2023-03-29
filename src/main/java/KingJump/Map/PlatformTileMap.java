@@ -1,14 +1,13 @@
 package KingJump.Map;
 
-import KingJump.Character.Enemy.Enemy;
-import KingJump.Platform.Platform;
+import KingJump.Platform.NormalPlatform;
 import com.github.hanyaeger.api.scenes.TileMap;
 
 public class PlatformTileMap extends TileMap {
 
     @Override
     public void setupEntities() {
-        addEntity(1, Platform.class, "sprites/platformSprite.png");
+        addEntity(1, NormalPlatform.class);
     }
 
     @Override
