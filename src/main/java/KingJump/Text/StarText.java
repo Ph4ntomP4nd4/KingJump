@@ -14,8 +14,8 @@ public class StarText extends TextEntity {
         setFill(Color.YELLOW);
     }
 
-    public void setStarText(int health){
-        setText("Health: " + health);
+    public void setStarText(int star){
+        setText("Stars: " + star);
     }
 
 }

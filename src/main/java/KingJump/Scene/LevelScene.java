@@ -9,6 +9,7 @@ import KingJump.InteractiveObject.Star;
 import KingJump.Map.LevelTileMap;
 import KingJump.Character.Player;
 import KingJump.Text.HealthText;
+import KingJump.Text.StarText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
@@ -23,10 +24,12 @@ public class LevelScene extends DynamicScene implements TileMapContainer {
 
     @Override
     public void setupEntities() {
-        HealthText healthText = new HealthText(new Coordinate2D(250, 75));
+        HealthText healthText = new HealthText(new Coordinate2D(210, 75));
         addEntity(healthText);
+        StarText starText = new StarText(new Coordinate2D(getWidth() - 300, 75));
+        addEntity(starText);
 
-        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), healthText);
+        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), healthText, starText);
         addEntity(player);
 
         Star star1 = new Star(new Coordinate2D(340, 300), new Size(50,50));

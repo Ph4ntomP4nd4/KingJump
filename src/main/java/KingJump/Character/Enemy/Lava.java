@@ -14,6 +14,7 @@ public class Lava extends Enemy {
 
     public void raiseLava() {
         //TODO laat lava steeds stijgen
+        setMotion(0.1, 180d);
     }
 
     public void killPlayer() {

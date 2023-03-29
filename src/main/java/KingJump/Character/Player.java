@@ -2,6 +2,7 @@ package KingJump.Character;
 
 import KingJump.Character.Enemy.Enemy;
 import KingJump.Text.HealthText;
+import KingJump.Text.StarText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -18,13 +19,17 @@ import java.util.Set;
 
 public class Player extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private final HealthText healthText;
+    private final StarText starText;
     private boolean canJump = true;
     private int health = 3;
+    private int star = 0;
 
-    public Player(Coordinate2D location, HealthText healthText) {
+    public Player(Coordinate2D location, HealthText healthText, StarText starText) {
         super("sprites/playerSprites.png", location, new Size(80, 100), 1, 10);
         this.healthText = healthText;
+        this.starText = starText;
         healthText.setHealthText(health);
+        starText.setStarText(star);
     }
 
     @Override
