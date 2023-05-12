@@ -1,6 +1,9 @@
 package KingJump;
 
+import KingJump.InteractiveObject.FinishDoor;
+import KingJump.Scene.GameOverScene;
 import KingJump.Scene.LevelScene;
+import KingJump.Scene.GameFinishedScene;
 import KingJump.Scene.TitleScene;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
@@ -17,6 +20,9 @@ public class KingJump extends YaegerGame {
     @Override
     public void setupScenes() {
         addScene(0, new TitleScene(this));
-        addScene(1, new LevelScene());
+        addScene(1, new LevelScene(this, this));
+        addScene(2, new GameFinishedScene());
+        addScene(3, new GameOverScene());
+
     }
 }

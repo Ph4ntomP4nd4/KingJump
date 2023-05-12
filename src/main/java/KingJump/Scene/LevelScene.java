@@ -7,6 +7,7 @@ import KingJump.InteractiveObject.Gem.Gem;
 import KingJump.InteractiveObject.Gem.GreenGem;
 import KingJump.InteractiveObject.Gem.RedGem;
 import KingJump.InteractiveObject.Star;
+import KingJump.KingJump;
 import KingJump.Map.LevelTileMap;
 import KingJump.Character.Player;
 import KingJump.Text.HealthText;
@@ -17,6 +18,13 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 
 public class LevelScene extends DynamicScene implements TileMapContainer {
+    private KingJump kingJump;
+    private FinishDoor finishDoor;
+
+    public LevelScene (KingJump kingJump, FinishDoor finishDoor) {
+        this.kingJump = kingJump;
+        this.finishDoor = finishDoor;
+    }
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/levelbackground1.png");
@@ -30,7 +38,7 @@ public class LevelScene extends DynamicScene implements TileMapContainer {
         StarText starText = new StarText(new Coordinate2D(getWidth() - 300, 75));
         addEntity(starText);
 
-        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() / 2), healthText, starText);
+        Player player = new Player(new Coordinate2D(getWidth() / 2, getHeight() - 300), healthText, starText, kingJump, finishDoor);
         addEntity(player);
 
         Star star1 = new Star(new Coordinate2D(340, 300), new Size(50,50));
@@ -47,7 +55,7 @@ public class LevelScene extends DynamicScene implements TileMapContainer {
         addEntity(greenGem);
         addEntity(blueGem);
 
-        FinishDoor finishDoor = new FinishDoor(new Coordinate2D(1150, 140), new Size(50,80));
+        FinishDoor finishDoor = new FinishDoor(new Coordinate2D(1150, 140), new Size(50,80), kingJump);
         addEntity(finishDoor);
 
         Lava lava = new Lava(new Coordinate2D(0, getHeight()), new Size(1920, 1080));

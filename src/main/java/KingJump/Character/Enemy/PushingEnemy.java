@@ -1,5 +1,6 @@
 package KingJump.Character.Enemy;
 
+import KingJump.Character.Player;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collider;
@@ -14,17 +15,27 @@ public class PushingEnemy extends Enemy {
     }
 
     public void movePushingEnemy() {
-        //TODO push player continu
-        setMotion(1, 90d);
-        timer += 0.01;
-        if (timer >= 1) {
+        if (timer <= 1) {
+            setMotion(1, 90d);
+        } else if (timer <= 2) {
             setMotion(1, 270d);
-            timer = 0;
         }
 
+        timer += 0.005;
+
+        if (timer >= 2) {
+            timer = 0;
+        }
     }
     @Override
     public void onCollision(List<Collider> collidingObjects) {
-        //TODO knockplayer away
+        movePushingEnemy();
+        for (Collider collider : collidingObjects) {
+            if (collider instanceof Player) {
+                Player player = (Player) collider;
+                damagePlayer(player);
+                knockbackPlayer(player);
+            }
+        }
     }
 }

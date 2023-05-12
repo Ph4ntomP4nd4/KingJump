@@ -14,4 +14,14 @@ public abstract class Enemy extends DynamicSpriteEntity implements Collider, Col
     public Enemy(String resource, Coordinate2D location, Size size, int row, int column) {
         super(resource, location, size, row, column);
     }
+
+    void damagePlayer(Player player) {
+        player.health--;
+        System.out.println(player.health);
+    }
+
+    void knockbackPlayer(Player player) {
+        player.setAnchorLocation(new Coordinate2D(getWidth()/2, getHeight() - 300));
+    }
+
 }

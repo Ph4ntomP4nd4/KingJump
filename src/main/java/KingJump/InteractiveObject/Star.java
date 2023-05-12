@@ -1,5 +1,6 @@
 package KingJump.InteractiveObject;
 
+import KingJump.Character.Player;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -13,11 +14,18 @@ public class Star extends DynamicSpriteEntity implements Collider, Collided {
         super("sprites/star.png", location, size);
     }
 
-    public void givePlayerStar () {
+    public void givePlayerStar (Player player) {
+        player.star++;
     }
 
     @Override
     public void onCollision(List<Collider> collidingObjects) {
-        //TODO give player a star, star++
+        for (Collider collider : collidingObjects) {
+            if (collider instanceof Player) {
+                Player player = (Player) collider;
+                givePlayerStar(player);
+                remove();
+            }
+        }
     }
 }

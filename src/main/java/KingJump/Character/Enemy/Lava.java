@@ -1,5 +1,6 @@
 package KingJump.Character.Enemy;
 
+import KingJump.Character.Player;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collider;
@@ -13,11 +14,16 @@ public class Lava extends Enemy {
     }
 
     public void raiseLava() {
-        setMotion(0.3, 180d);
+        setMotion(0.01, 180d);
     }
 
     @Override
     public void onCollision(List<Collider> collidingObjects) {
-        //TODO kill player als hij in lava valt
+        for (Collider collider : collidingObjects) {
+            if (collider instanceof Player) {
+                Player player = (Player) collider;
+                damagePlayer(player);
+            }
+        }
     }
 }

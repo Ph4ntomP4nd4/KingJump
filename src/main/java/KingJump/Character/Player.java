@@ -1,7 +1,8 @@
 package KingJump.Character;
 
-import KingJump.Character.Enemy.Enemy;
-import KingJump.Platform.FallingPlatform;
+
+import KingJump.InteractiveObject.FinishDoor;
+import KingJump.KingJump;
 import KingJump.Text.HealthText;
 import KingJump.Text.StarText;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -22,15 +23,20 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     private final HealthText healthText;
     private final StarText starText;
     private boolean canJump = true;
-    private int health = 3;
-    private int star = 0;
+    public static int health = 3;
+    public int star = 0;
 
-    public Player(Coordinate2D location, HealthText healthText, StarText starText) {
+    private KingJump kingJump;
+    private FinishDoor finishDoor;
+
+    public Player(Coordinate2D location, HealthText healthText, StarText starText, KingJump kingJump, FinishDoor finishDoor) {
         super("sprites/playerSprites.png", location, new Size(80, 100), 1, 10);
         this.healthText = healthText;
         this.starText = starText;
         healthText.setHealthText(health);
         starText.setStarText(star);
+        this.kingJump = kingJump;
+        this.finishDoor = finishDoor;
     }
 
     @Override
@@ -79,14 +85,15 @@ public class Player extends DynamicSpriteEntity implements KeyListener, SceneBor
     }
 
     @Override
-    public void onCollision(List<Collider> colliders) {
+    public void onCollision(List<Collider> collidingObjects) {
         //TODO Hitbox hitbox = new Hitbox((getWidth() / 2)(getHeight() - 200), 200, 80);
         setMotion(0, 0d);
         canJump = true;
-        if (colliders instanceof Enemy) {
-            setAnchorLocation(new Coordinate2D(getWidth() / 2, getHeight() / 2 ));
-            health--;
-            healthText.setHealthText(health);
+        if (health == 0) {
+            remove();
+            kingJump.setActiveScene(3);
+        } else if (finishDoor.playerCollided) {
+            remove();
         }
     }
 }

@@ -13,4 +13,5 @@ module KingJump {
     exports KingJump.Map;
     exports KingJump.Platform;
     exports KingJump.Text;
+    exports KingJump.InteractiveObject;
 }
