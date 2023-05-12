@@ -15,9 +15,15 @@ public class TimerPlatform extends Platform {
 
     public void turnOnAndOff() {
         //TODO platform mbv timer laten verdwijnen
-        timer += 0.01;
-        if (timer >= 1) {
-            //laat platform verdwijnen
+        if (timer <= 1) {
+            //TODO platform aan
+        } else if (timer <= 2) {
+            //TODO platform uit
+        }
+
+        timer += 0.005;
+
+        if (timer >= 2) {
             timer = 0;
         }
     }
